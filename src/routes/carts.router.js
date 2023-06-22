@@ -29,6 +29,7 @@ router.post('/', (req, res) => {
 router.post('/:cid/product/:pid', (req, res) => {
     const {cid, pid} = req.params;
     controlFileManager.addProductsCartID(cid, pid);
+    res.status(201).json({message: 'success', method: "POST-cart", payload: "Se añadio un nuevo producto al carrito"});
     
 });
 
